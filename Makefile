@@ -6,7 +6,7 @@
 #    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/11 15:23:31 by ddantas-          #+#    #+#              #
-#    Updated: 2022/08/11 15:37:51 by ddantas-         ###   ########.fr        #
+#    Updated: 2022/08/11 16:02:56 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,21 +20,22 @@ FILESC = server.c \
 
 PRINTFC = ./ft_printf/ft_printf.c \
 		./ft_printf/ft_printf_utils.c \
-		./ft_printf/ft_printf_funtions.c \
-		./ft_printf/ft_printf_funtions_2.c \
+		./ft_printf/ft_printf_functions.c \
+		./ft_printf/ft_printf_functions_2.c \
 
 
 FILESMINITALK0 = $(FILESC:.c=.o)
-FILESPRINTF0 = $(FILESC:.c=.o)
+FILESPRINTF0 = $(PRINTFC:.c=.o)
 
 
 all: $(NAME)
 
 $(NAME): $(FILESMINITALK0) $(FILESPRINTF0)
-	ar rc $(NAME) $(FILES0)
+	ar rc $(NAME) $(FILESMINITALK0) $(FILESPRINTF0)
 
 clean:
 	rm -f *.o
+	rm -f ./ft_printf/*.o
 
 fclean: clean
 	rm -f $(NAME)

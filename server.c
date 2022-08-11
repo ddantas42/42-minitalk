@@ -6,7 +6,17 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:42:09 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:42:10 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/08/11 16:02:16 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "minitalk.h"
+
+int comeca()
+{
+	int	pid;
+
+	pid = getpid();
+
+	return (0);
+}

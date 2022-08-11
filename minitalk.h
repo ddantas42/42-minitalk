@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:04:17 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:41:22 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/08/11 15:53:20 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 # include <signal.h>
 # include "./ft_printf/ft_printf.h"
 
+int main(int argc, char **argv);
 
 #endif
