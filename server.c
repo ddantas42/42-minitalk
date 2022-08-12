@@ -6,13 +6,13 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:42:09 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/08/11 16:06:33 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:21:38 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int comeca()
+int main(int argc, char *argv[])
 {
 	int	pid;
 
