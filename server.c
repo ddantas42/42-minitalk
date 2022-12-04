@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:42:09 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/04 13:55:47 by hiper            ###   ########.fr       */
+/*   Updated: 2022/12/04 20:25:35 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void handler(int sig)
 {
-	ft_printf("\nQuem te dera hehe: %d\n", sig);
+	ft_printf("\nSig = %d\n", sig);
 }
 
 int main(int argc, char *argv[])
@@ -36,5 +36,5 @@ int main(int argc, char *argv[])
 
 	while (1)
 		pause();
-	return (pid);
+	return (0);
 }

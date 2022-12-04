@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:04:17 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/04 12:49:08 by hiper            ###   ########.fr       */
+/*   Updated: 2022/12/04 20:25:38 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,5 @@
 # include <sys/types.h>
 # include "./ft_printf/ft_printf.h"
 # include "./libft/libft.h"
-
-void handler(int sig);
 
 #endif
