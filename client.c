@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:50:53 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/05 16:48:28 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:58:33 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	void	handler(int sig)
 }
 
 
-static void	str2bin(int pid, char *str)
+static void	str2bin(int pid, unsigned char *str)
 {
 	int	n;
 	int	c;
@@ -59,7 +59,7 @@ int	main(int argc, char *argv[3])
 	sa.sa_flags = SA_RESTART;
 	
 	ft_printf("To: %d | Sent: %s\n", atoi(argv[1]), argv[2]);
-	str2bin(atoi(argv[1]), argv[2]);
+	str2bin(atoi(argv[1]), (unsigned char *) argv[2]);
 	sigaction(SIGUSR1, &sa, NULL);
 	return (0);
 }
