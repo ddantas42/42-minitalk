@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:42:09 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/05 17:16:01 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/06 09:04:38 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ static	void	handler(int sig)
 			write(1, "\n", 2);
 			//kill(client_pid, SIGUSR1);
 		}
-		if (c >= 32 && c <= 126)
-			ft_printf("%c", c);
+		ft_printf("%c", c);
 		n = 0;
 		c = 0;
 	}
