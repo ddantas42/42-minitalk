@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:50:53 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/07 08:55:13 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/07 08:59:09 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static	void	handler(int sig)
 {
 	write(1, "TOU A CORRER HEHE\n", 18);
 }
-
 
 void	str2bin(int pid, unsigned char *str)
 {
