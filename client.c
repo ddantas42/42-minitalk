@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:50:53 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/06 10:18:37 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/07 08:55:13 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	void	handler(int sig)
 {
-	ft_printf("TOU A CORRER HEHE\n");
+	write(1, "TOU A CORRER HEHE\n", 18);
 }
 
 
@@ -47,17 +47,11 @@ void	str2bin(int pid, unsigned char *str)
 	}
 }
 
-int	main(int argc, char *argv[3])
+int	main(int argc, char **argv)
 {
-	struct sigaction	sa2;
-	
 	if (argc != 3 || !(ft_strlen(argv[2])))
 		return (-1);
-	sa2.sa_handler = &handler;
-	sa2.sa_flags = SA_RESTART;
-	sigaction(SIGUSR1, &sa2, NULL);
-	str2bin(ft_atoi(argv[1]), (unsigned char *) argv[2]);
-
 	ft_printf("MY PID = %d\n", getpid());
+	str2bin(ft_atoi(argv[1]), (unsigned char *) argv[2]);
 	return (0);
 }
