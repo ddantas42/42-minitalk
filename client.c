@@ -6,15 +6,20 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:50:53 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/07 08:59:09 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/09 15:55:31 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-static	void	handler(int sig)
+static	void	handler(int sig, siginfo_t *id, void *nada)
 {
-	write(1, "TOU A CORRER HEHE\n", 18);
+	(void)id;
+	(void)nada;
+	if (sig == SIGUSR1)
+		write(1, "TOU A CORRER HEHE\n", 18);
+	else
+		return ;
 }
 
 void	str2bin(int pid, unsigned char *str)
@@ -48,6 +53,13 @@ void	str2bin(int pid, unsigned char *str)
 
 int	main(int argc, char **argv)
 {
+	struct sigaction	sa2;
+
+	sa2.sa_sigaction = handler;
+	sa2.sa_flags = SA_SIGINFO;
+	sigemptyset(&sa2.sa_mask);
+	sigaction(SIGUSR1, &sa2, NULL);
+
 	if (argc != 3 || !(ft_strlen(argv[2])))
 		return (-1);
 	ft_printf("MY PID = %d\n", getpid());
