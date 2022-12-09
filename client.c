@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:50:53 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/09 15:55:31 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:07:27 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ static	void	handler(int sig, siginfo_t *id, void *nada)
 	(void)id;
 	(void)nada;
 	if (sig == SIGUSR1)
-		write(1, "TOU A CORRER HEHE\n", 18);
+	{
+		write(1, "********************\n", 22);
+		write(1, "* Message received *\n", 22);
+		write(1, "********************\n", 22);
+	}
 	else
 		return ;
 }
@@ -59,10 +63,8 @@ int	main(int argc, char **argv)
 	sa2.sa_flags = SA_SIGINFO;
 	sigemptyset(&sa2.sa_mask);
 	sigaction(SIGUSR1, &sa2, NULL);
-
 	if (argc != 3 || !(ft_strlen(argv[2])))
 		return (-1);
-	ft_printf("MY PID = %d\n", getpid());
 	str2bin(ft_atoi(argv[1]), (unsigned char *) argv[2]);
 	return (0);
 }

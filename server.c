@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:42:09 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/09 14:25:35 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:02:33 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ static	void	handler(int sig, siginfo_t *id, void *nada)
 		if (!c)
 		{
 			client_pid = id->si_pid;
-			ft_printf("\n");
-			ft_printf("PID CLIENT = %d\n",client_pid);
+			write(1, "\n", 1);
 			kill(client_pid, SIGUSR1);
 		}
 		else
-			ft_printf("%c", c);
+			write(1, &c, 1);
 		n = 0;
 		c = 0;
 	}
