@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:50:53 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/09 16:10:59 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:23:12 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ void	str2bin(int pid, unsigned char *str)
 			else
 				kill(pid, SIGUSR2);
 			c /= 2;
-			usleep(100);
+			usleep(300);
 		}
 	}
 	b = 8;
 	while (b--)
 	{
 		kill(pid, SIGUSR2);
-		usleep(100);
+		usleep(300);
 	}
 }
 
