@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:42:09 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/15 15:22:46 by ddantas-         ###   ########.fr       */
+/*   Updated: 2022/12/15 17:46:06 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static	void	handler(int sig, siginfo_t *id, void *nada)
 		c = c >> 1;
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	struct sigaction	sa;
 

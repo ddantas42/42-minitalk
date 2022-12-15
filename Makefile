@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
+#    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/11 15:23:31 by ddantas-          #+#    #+#              #
-#    Updated: 2022/12/04 11:35:28 by hiper            ###   ########.fr        #
+#    Updated: 2022/12/15 17:46:08 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-CFLAGS = 
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
 PRINTFC = ./ft_printf/ft_printf.c \
 		./ft_printf/ft_printf_utils.c \
@@ -53,22 +53,35 @@ LIBFTFC	= ./libft/ft_isalpha.c \
 		./libft/ft_putendl_fd.c \
 		./libft/ft_putnbr_fd.c \
 
+LIBFT = ./libft/libft.a
+FT_PRINTF = ./ft_printf/libftprintf.a
+INC	= -I. -I./libft -I./ft_printf
 
-FILESMINITALK0 = $(FILESC:.c=.o)
 FILESPRINTF0 = $(PRINTFC:.c=.o)
+LIBFTFC0 = $(LIBFTFC:.c=.o)
 
 
 all: server client
 
-server:
-	$(CC) $(CFLAGS) server.c $(PRINTFC) $(LIBFTFC) -o server
+bonus: server client
 
-client:
-	$(CC) $(CFLAGS) client.c $(PRINTFC) $(LIBFTFC) -o client
+
+server: $(LIBFT) $(FT_PRINTF)
+	$(CC) $(CFLAGS) server.c $(FT_PRINTF) $(LIBFT) $(INC) -o server
+
+client: $(LIBFT) $(FT_PRINTF)
+	$(CC) $(CFLAGS) client.c $(FT_PRINTF) $(LIBFT) $(INC) -o client
+	
+$(LIBFT):
+	make -C libft
+	
+$(FT_PRINTF):
+	make -C ft_printf
 	
 clean:
 	rm -f *.o
-	rm -f ./ft_printf/*.o
+	make -C libft fclean
+	make -C ft_printf fclean
 
 fclean: clean
 	rm server
