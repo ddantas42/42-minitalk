@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 15:04:17 by ddantas-          #+#    #+#             */
-/*   Updated: 2022/12/04 20:25:38 by hiper            ###   ########.fr       */
+/*   Created: 2022/08/11 15:42:09 by ddantas-          #+#    #+#             */
+/*   Updated: 2022/12/15 15:55:22 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MINITALK_H
-# define FT_MINITALK_H
+#ifndef MINITALK_H
+# define MINITALK_H
 
 # include <signal.h>
 # include <sys/types.h>
