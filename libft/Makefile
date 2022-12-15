@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddantas- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 17:02:24 by ddantas-          #+#    #+#              #
-#    Updated: 2022/02/17 17:02:29 by ddantas-         ###   ########.fr        #
+#    Updated: 2022/12/13 09:31:53 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-GCCA = gcc -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
@@ -63,8 +64,9 @@ FILES0 = $(FILESC:.c=.o) # Transformar .c da variavel FILESC em .o
 
 FILESBONUS0 = $(FILESBONUS:.c=.o)
 
-all:
-	$(GCCA) -c $(FILESC)
+all: $(NAME)
+
+$(NAME): $(FILES0)
 	ar rc $(NAME) $(FILES0)
 
 clean:
