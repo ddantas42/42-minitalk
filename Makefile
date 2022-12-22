@@ -6,7 +6,7 @@
 #    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/11 15:23:31 by ddantas-          #+#    #+#              #
-#    Updated: 2022/12/22 16:58:38 by ddantas-         ###   ########.fr        #
+#    Updated: 2022/12/22 17:05:26 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ all: server client
 bonus: server client
 
 
-server: $(LIBFT) $(FT_PRINTF)
+server: $(LIBFT) $(FT_PRINTF) server.c
 	$(CC) $(CFLAGS) server.c $(FT_PRINTF) $(LIBFT) $(INC) -o server
 
-client: $(LIBFT) $(FT_PRINTF)
+client: $(LIBFT) $(FT_PRINTF) client.c
 	$(CC) $(CFLAGS) client.c $(FT_PRINTF) $(LIBFT) $(INC) -o client
 	
 $(LIBFT):
